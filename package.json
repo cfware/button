@@ -1,0 +1,35 @@
+{
+	"name": "@cfware/button",
+	"version": "0.1.0",
+	"description": "Icon button component",
+	"type": "module",
+	"main": "button.js",
+	"exports": "./button.js",
+	"scripts": {
+		"test": "cfware-lint ."
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"author": "Corey Farrell",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cfware/button.git"
+	},
+	"bugs": {
+		"url": "https://github.com/cfware/button/issues"
+	},
+	"homepage": "https://github.com/cfware/button#readme",
+	"dependencies": {
+		"@cfware/event-blocker": "^0.1.0",
+		"@cfware/shadow-element": "^0.15.0"
+	},
+	"peerDependencies": {
+		"@cfware/icons": "*"
+	},
+	"devDependencies": {
+		"@cfware/icons": "file:pkgs/@cfware/icons",
+		"@cfware/lint": "^1.4.3"
+	}
+}
