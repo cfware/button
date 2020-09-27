@@ -30,6 +30,6 @@
 	},
 	"devDependencies": {
 		"@cfware/icons": "file:pkgs/@cfware/icons",
-		"@cfware/lint": "^1.4.3"
+		"@cfware/lint": "^2.0.2"
 	}
 }
