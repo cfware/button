@@ -3,7 +3,23 @@ import {immediateBlockEvent} from '@cfware/event-blocker';
 
 import '@cfware/icons';
 
+function renderLink(current, href, download) {
+	if (download) {
+		return html`
+			<a hidden ref=${current} href=${href} download=${download}>a</a>
+		`;
+	}
+
+	if (href) {
+		return html`
+			<a hidden ref=${current} href=${href}>a</a>
+		`;
+	}
+}
+
 class CFWareButton extends ShadowElement {
+	_link = {};
+
 	_setTabIndex() {
 		if (this.noTab) {
 			this.setAttribute('tabindex', -1);
@@ -49,16 +65,26 @@ class CFWareButton extends ShadowElement {
 				this.click();
 			}
 		});
+
 		this.addEventListener('click', event => {
 			if (this.disabled) {
 				immediateBlockEvent(event);
 			}
+		}, {capture: true});
+
+		this.addEventListener('click', event => {
+			if (event.composedPath()[0] !== this._link.current) {
+				this._link.current?.click();
+			}
 		});
+
 		this.setAttribute('role', 'button');
 		this._setTabIndex();
 	}
 
 	get [template]() {
+		const downloadLink = renderLink(this._link, this.href, this.download);
+
 		return html`
 			<style>
 				:host {
@@ -100,6 +126,7 @@ class CFWareButton extends ShadowElement {
 					cursor: pointer;
 				}
 			</style>
+			${downloadLink}
 			<cfware-icons>${this.icon}</cfware-icons>
 		`;
 	}
@@ -107,6 +134,8 @@ class CFWareButton extends ShadowElement {
 
 CFWareButton[define]('cfware-button', {
 	[stringProperties]: {
-		icon: ''
+		icon: '',
+		href: '',
+		download: ''
 	}
 });
