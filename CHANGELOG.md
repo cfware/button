@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/cfware/button/compare/v0.1.1...v0.2.0) (2020-10-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* Rename peer dependency to @cfware-app/icons
+
+### Features
+
+* Rename peer dependency to @cfware-app/icons ([9eb8c0c](https://github.com/cfware/button/commit/9eb8c0c9834862abdc255359da0ffc5993f853ed))
+
 ### [0.1.1](https://github.com/cfware/button/compare/v0.1.0...v0.1.1) (2020-09-28)
 
 
