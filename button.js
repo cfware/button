@@ -1,7 +1,7 @@
 import ShadowElement, {html, template, define, stringProperties} from '@cfware/shadow-element';
 import {immediateBlockEvent} from '@cfware/event-blocker';
 
-import '@cfware/icons';
+import '@cfware-app/icons';
 
 function renderLink(current, href, download) {
 	if (download) {
