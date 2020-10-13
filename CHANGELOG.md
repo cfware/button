@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/cfware/button/compare/v0.2.0...v0.3.0) (2020-10-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update to new icon builder, use @cfware-app/icon
+
+### Features
+
+* Update to new icon builder, use @cfware-app/icon ([033dcc2](https://github.com/cfware/button/commit/033dcc279bc4bff5cdb8b37955740dd75ae5a7eb))
+
 ## [0.2.0](https://github.com/cfware/button/compare/v0.1.1...v0.2.0) (2020-10-10)
 
 
