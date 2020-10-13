@@ -26,10 +26,10 @@
 		"@cfware/shadow-element": "^0.15.0"
 	},
 	"peerDependencies": {
-		"@cfware-app/icons": "*"
+		"@cfware-app/icon": "*"
 	},
 	"devDependencies": {
-		"@cfware-app/icons": "file:pkgs/@cfware-app/icons",
+		"@cfware-app/icon": "file:pkgs/icon",
 		"@cfware/lint": "^2.0.2"
 	}
 }

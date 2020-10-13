@@ -1,7 +1,7 @@
 import ShadowElement, {html, template, define, stringProperties} from '@cfware/shadow-element';
 import {immediateBlockEvent} from '@cfware/event-blocker';
 
-import '@cfware-app/icons';
+import '@cfware-app/icon';
 
 function renderLink(current, href, download) {
 	if (download) {
@@ -118,16 +118,16 @@ class CFWareButton extends ShadowElement {
 					color: var(--focus-color, inherit);
 				}
 
-				:host([disabled]) cfware-icons {
+				:host([disabled]) cfware-icon {
 					opacity: 0.25;
 				}
 
-				cfware-icons {
+				cfware-icon {
 					cursor: pointer;
 				}
 			</style>
 			${downloadLink}
-			<cfware-icons>${this.icon}</cfware-icons>
+			<cfware-icon icon=${this.icon} />
 		`;
 	}
 }
