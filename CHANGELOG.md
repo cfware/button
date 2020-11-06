@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/cfware/button/compare/v0.3.0...v0.4.0) (2020-11-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remove href and download attributes
+
+### Features
+
+* Update @cfware/shadow-element ([536cecb](https://github.com/cfware/button/commit/536cecb3388e94f64c5b9eb7d0f80ea8d4ddf220))
+
 ## [0.3.0](https://github.com/cfware/button/compare/v0.2.0...v0.3.0) (2020-10-13)
 
 
