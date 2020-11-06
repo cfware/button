@@ -23,13 +23,13 @@
 	"homepage": "https://github.com/cfware/button#readme",
 	"dependencies": {
 		"@cfware/event-blocker": "^0.1.0",
-		"@cfware/shadow-element": "^0.15.0"
+		"@cfware/shadow-element": "^0.16.0"
 	},
 	"peerDependencies": {
 		"@cfware-app/icon": "*"
 	},
 	"devDependencies": {
 		"@cfware-app/icon": "file:pkgs/icon",
-		"@cfware/lint": "^2.0.2"
+		"@cfware/lint": "^2.0.4"
 	}
 }

@@ -1,25 +1,9 @@
-import ShadowElement, {html, template, define, stringProperties} from '@cfware/shadow-element';
+import ShadowElement, {html, template, define, reflectBooleanProperties, reflectStringProperties} from '@cfware/shadow-element';
 import {immediateBlockEvent} from '@cfware/event-blocker';
 
 import '@cfware-app/icon';
 
-function renderLink(current, href, download) {
-	if (download) {
-		return html`
-			<a hidden ref=${current} href=${href} download=${download}>a</a>
-		`;
-	}
-
-	if (href) {
-		return html`
-			<a hidden ref=${current} href=${href}>a</a>
-		`;
-	}
-}
-
 class CFWareButton extends ShadowElement {
-	_link = {};
-
 	_setTabIndex() {
 		if (this.noTab) {
 			this.setAttribute('tabindex', -1);
@@ -28,32 +12,6 @@ class CFWareButton extends ShadowElement {
 		} else {
 			this.setAttribute('tabindex', 0);
 		}
-	}
-
-	get noTab() {
-		return this.hasAttribute('no-tab');
-	}
-
-	set noTab(value) {
-		if (this.noTab === Boolean(value)) {
-			return;
-		}
-
-		this.toggleAttribute('no-tab');
-		this._setTabIndex();
-	}
-
-	get disabled() {
-		return this.hasAttribute('disabled');
-	}
-
-	set disabled(value) {
-		if (this.disabled === Boolean(value)) {
-			return;
-		}
-
-		this.toggleAttribute('disabled');
-		this._setTabIndex();
 	}
 
 	constructor() {
@@ -72,19 +30,12 @@ class CFWareButton extends ShadowElement {
 			}
 		}, {capture: true});
 
-		this.addEventListener('click', event => {
-			if (event.composedPath()[0] !== this._link.current) {
-				this._link.current?.click();
-			}
-		});
-
 		this.setAttribute('role', 'button');
 		this._setTabIndex();
 	}
 
 	get [template]() {
-		const downloadLink = renderLink(this._link, this.href, this.download);
-
+		this._setTabIndex();
 		return html`
 			<style>
 				:host {
@@ -126,16 +77,11 @@ class CFWareButton extends ShadowElement {
 					cursor: pointer;
 				}
 			</style>
-			${downloadLink}
 			<cfware-icon icon=${this.icon} />
 		`;
 	}
 }
 
-CFWareButton[define]('cfware-button', {
-	[stringProperties]: {
-		icon: '',
-		href: '',
-		download: ''
-	}
-});
+reflectBooleanProperties(CFWareButton, ['disabled', 'noTab']);
+reflectStringProperties(CFWareButton, {icon: ''});
+CFWareButton[define]('cfware-button');
